@@ -31,10 +31,10 @@
             this.ustPanel = new SoliteraxControlLibrary.CustomPanel();
             this.headerText = new SoliteraxControlLibrary.CustomLabel();
             this.ellipseControl1 = new SoliteraxControlLibrary.EllipseControl();
-            this.componentHover1 = new SoliteraxControlLibrary.ComponentHover();
             this.loginUserControl1 = new Personel_Vardiya_Programı_Team_.Layouts.LoginUserControl();
             this.FormMinimize = new SoliteraxControlLibrary.CustomPictureBox();
             this.FormClose = new SoliteraxControlLibrary.CustomPictureBox();
+            this.componentHover1 = new SoliteraxControlLibrary.ComponentHover();
             this.ustPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FormMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FormClose)).BeginInit();
@@ -87,13 +87,8 @@
             // 
             // ellipseControl1
             // 
-            this.ellipseControl1.CornerRadius = 10;
+            this.ellipseControl1.CornerRadius = 40;
             this.ellipseControl1.TargetControl = this;
-            // 
-            // componentHover1
-            // 
-            this.componentHover1.ReferencedControl = this.ustPanel;
-            this.componentHover1.TargetControl = this;
             // 
             // loginUserControl1
             // 
@@ -153,6 +148,11 @@
             this.FormClose.TabStop = false;
             this.FormClose.Click += new System.EventHandler(this.customPictureBox1_Click);
             // 
+            // componentHover1
+            // 
+            this.componentHover1.ReferencedControl = this.ustPanel;
+            this.componentHover1.TargetControl = this;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,8 +180,8 @@
         private SoliteraxControlLibrary.CustomPictureBox FormClose;
         private SoliteraxControlLibrary.CustomLabel headerText;
         private SoliteraxControlLibrary.CustomPictureBox FormMinimize;
-        private SoliteraxControlLibrary.ComponentHover componentHover1;
         private Layouts.LoginUserControl loginUserControl1;
+        private SoliteraxControlLibrary.ComponentHover componentHover1;
     }
 }
 
