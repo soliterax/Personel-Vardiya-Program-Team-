@@ -44,7 +44,7 @@
             // 
             this.ustPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.ustPanel.borderBottomColor = System.Drawing.Color.White;
-            this.ustPanel.borderBottomSize = 2;
+            this.ustPanel.borderBottomSize = 1;
             this.ustPanel.borderColor = System.Drawing.Color.White;
             this.ustPanel.borderLeftColor = System.Drawing.Color.White;
             this.ustPanel.borderLeftSize = 1;
@@ -108,7 +108,7 @@
             // FormMinimize
             // 
             this.FormMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FormMinimize.BackColor = System.Drawing.Color.Cyan;
+            this.FormMinimize.BackColor = System.Drawing.Color.Transparent;
             this.FormMinimize.borderBottomColor = System.Drawing.Color.White;
             this.FormMinimize.borderBottomSize = 1;
             this.FormMinimize.borderColor = System.Drawing.Color.White;
@@ -120,9 +120,11 @@
             this.FormMinimize.borderTopColor = System.Drawing.Color.White;
             this.FormMinimize.borderTopSize = 1;
             this.FormMinimize.haveBorder = false;
+            this.FormMinimize.Image = global::Personel_Vardiya_Programı_Team_.Properties.Resources.minimize;
             this.FormMinimize.Location = new System.Drawing.Point(991, 0);
             this.FormMinimize.Name = "FormMinimize";
             this.FormMinimize.Size = new System.Drawing.Size(34, 33);
+            this.FormMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FormMinimize.TabIndex = 1;
             this.FormMinimize.TabStop = false;
             this.FormMinimize.Click += new System.EventHandler(this.customPictureBox2_Click);
