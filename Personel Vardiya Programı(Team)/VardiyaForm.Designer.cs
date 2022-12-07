@@ -1,6 +1,6 @@
 ﻿namespace Personel_Vardiya_Programı_Team_
 {
-    partial class MainForm
+    partial class VardiyaForm
     {
         /// <summary>
         ///Gerekli tasarımcı değişkeni.
@@ -34,13 +34,13 @@
             this.FormClose = new SoliteraxControlLibrary.CustomPictureBox();
             this.ellipseControl1 = new SoliteraxControlLibrary.EllipseControl();
             this.componentHover1 = new SoliteraxControlLibrary.ComponentHover();
-            this.customButton1 = new SoliteraxControlLibrary.CustomButton();
-            this.customButton2 = new SoliteraxControlLibrary.CustomButton();
-            this.customButton3 = new SoliteraxControlLibrary.CustomButton();
             this.customButton4 = new SoliteraxControlLibrary.CustomButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.customButton1 = new SoliteraxControlLibrary.CustomButton();
             this.ustPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FormMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FormClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ustPanel
@@ -150,66 +150,6 @@
             this.componentHover1.ReferencedControl = this.ustPanel;
             this.componentHover1.TargetControl = this;
             // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.customButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.customButton1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton1.BorderRadius = 10;
-            this.customButton1.BorderSize = 3;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(58, 81);
-            this.customButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(623, 490);
-            this.customButton1.TabIndex = 2;
-            this.customButton1.Text = "Personel Ekle , Sil ve Güncelleme\r\n\r\n";
-            this.customButton1.TextColor = System.Drawing.Color.White;
-            this.customButton1.UseVisualStyleBackColor = false;
-            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
-            // 
-            // customButton2
-            // 
-            this.customButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.customButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.customButton2.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton2.BorderRadius = 10;
-            this.customButton2.BorderSize = 3;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.ForeColor = System.Drawing.Color.White;
-            this.customButton2.Location = new System.Drawing.Point(762, 81);
-            this.customButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(604, 109);
-            this.customButton2.TabIndex = 3;
-            this.customButton2.Text = " Otomatik Vardiya Ayarlama";
-            this.customButton2.TextColor = System.Drawing.Color.White;
-            this.customButton2.UseVisualStyleBackColor = false;
-            this.customButton2.Click += new System.EventHandler(this.customButton2_Click);
-            // 
-            // customButton3
-            // 
-            this.customButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.customButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.customButton3.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton3.BorderRadius = 10;
-            this.customButton3.BorderSize = 3;
-            this.customButton3.FlatAppearance.BorderSize = 0;
-            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton3.ForeColor = System.Drawing.Color.White;
-            this.customButton3.Location = new System.Drawing.Point(762, 314);
-            this.customButton3.Margin = new System.Windows.Forms.Padding(4);
-            this.customButton3.Name = "customButton3";
-            this.customButton3.Size = new System.Drawing.Size(604, 109);
-            this.customButton3.TabIndex = 4;
-            this.customButton3.Text = " Vardiya güncelle";
-            this.customButton3.TextColor = System.Drawing.Color.White;
-            this.customButton3.UseVisualStyleBackColor = false;
-            this.customButton3.Click += new System.EventHandler(this.customButton3_Click);
-            // 
             // customButton4
             // 
             this.customButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
@@ -220,7 +160,7 @@
             this.customButton4.FlatAppearance.BorderSize = 0;
             this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton4.ForeColor = System.Drawing.Color.White;
-            this.customButton4.Location = new System.Drawing.Point(1166, 635);
+            this.customButton4.Location = new System.Drawing.Point(38, 657);
             this.customButton4.Margin = new System.Windows.Forms.Padding(4);
             this.customButton4.Name = "customButton4";
             this.customButton4.Size = new System.Drawing.Size(200, 49);
@@ -230,26 +170,57 @@
             this.customButton4.UseVisualStyleBackColor = false;
             this.customButton4.Click += new System.EventHandler(this.customButton4_Click);
             // 
-            // MainForm
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(58, 83);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1321, 507);
+            this.dataGridView1.TabIndex = 7;
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.customButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.customButton1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton1.BorderRadius = 10;
+            this.customButton1.BorderSize = 3;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.ForeColor = System.Drawing.Color.White;
+            this.customButton1.Location = new System.Drawing.Point(1179, 636);
+            this.customButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(200, 70);
+            this.customButton1.TabIndex = 8;
+            this.customButton1.Text = "Değiştir";
+            this.customButton1.TextColor = System.Drawing.Color.White;
+            this.customButton1.UseVisualStyleBackColor = false;
+            this.customButton1.Click += new System.EventHandler(this.customButton1_Click_1);
+            // 
+            // VardiyaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(1436, 745);
-            this.Controls.Add(this.customButton4);
-            this.Controls.Add(this.customButton3);
-            this.Controls.Add(this.customButton2);
             this.Controls.Add(this.customButton1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.customButton4);
             this.Controls.Add(this.ustPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "MainForm";
+            this.Name = "VardiyaForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ustPanel.ResumeLayout(false);
             this.ustPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FormMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FormClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -263,10 +234,9 @@
         private SoliteraxControlLibrary.CustomPictureBox FormMinimize;
         private Layouts.LoginUserControl loginUserControl1;
         private SoliteraxControlLibrary.ComponentHover componentHover1;
-        private SoliteraxControlLibrary.CustomButton customButton1;
-        private SoliteraxControlLibrary.CustomButton customButton2;
-        private SoliteraxControlLibrary.CustomButton customButton3;
         private SoliteraxControlLibrary.CustomButton customButton4;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private SoliteraxControlLibrary.CustomButton customButton1;
     }
 }
 

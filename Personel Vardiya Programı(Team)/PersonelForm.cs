@@ -14,12 +14,12 @@ using SoliteraxLibrary;
 
 namespace Personel_Vardiya_Programı_Team_
 {
-    public partial class MainForm : Form
+    public partial class PersonelForm : Form
     {
 
-        
 
-        public MainForm()
+
+        public PersonelForm()
         {
             InitializeComponent();
         }
@@ -58,33 +58,28 @@ namespace Personel_Vardiya_Programı_Team_
 
         }
 
-        private void customButton4_Click(object sender, EventArgs e) // çıkış yap butonu
+        private void customButton4_Click(object sender, EventArgs e) // geri butonu
         {
             this.Dispose();
-            LoginUserControl c = new LoginUserControl();
+            MainForm c = new MainForm();
             c.Dock = DockStyle.Fill;
             Application.OpenForms[0].Controls.Add(c);
         }
 
-        private void customButton1_Click(object sender, EventArgs e) //personel butonu
+        private void customButton2_Click(object sender, EventArgs e) //sil butonu
         {
-            this.Dispose();
-            PersonelForm d = new PersonelForm();
-            d.Dock = DockStyle.Fill;
-            Application.OpenForms[0].Controls.Add(d);
+
         }
 
-        private void customButton2_Click(object sender, EventArgs e) // vardiya butonu
+        private void customButton1_Click(object sender, EventArgs e) // kaydet butonu
         {
-         // buraya otomatik vardiya algoritması çağırma
+
         }
 
-        private void customButton3_Click(object sender, EventArgs e) // vardiya güncelleme butonu
+        private void customButton3_Click(object sender, EventArgs e) // güncelle butonu
         {
-            this.Dispose();
-            VardiyaForm d = new VardiyaForm();
-            d.Dock = DockStyle.Fill;
-            Application.OpenForms[0].Controls.Add(d);
+
         }
     }
 }
+

@@ -32,7 +32,7 @@
             this.usernameTxt = new SoliteraxControlLibrary.CustomTextBox();
             this.passwordTxt = new SoliteraxControlLibrary.CustomTextBox();
             this.rememberme = new System.Windows.Forms.CheckBox();
-            this.SuspendLayout();
+            
             // 
             // customButton1
             // 
