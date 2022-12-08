@@ -31,8 +31,21 @@ namespace Personel_Vardiya_Programı_Team_.Layouts
                 c.Visible = true;
                 Application.OpenForms[1].Controls.Add(c);
             }
+            if (usernameTxt.Texts.Equals("personel") && passwordTxt.Texts.Equals("1234"))
+            {
+                this.Dispose();
+                Application.OpenForms[0].Controls.Remove(this);
+                GC.Collect();
+                UsersUserControl c = new UsersUserControl();
+
+                c.Dock = DockStyle.Fill;
+                c.Visible = true;
+                Application.OpenForms[1].Controls.Add(c);
+            }
 
         }
+
+            
 
         private void LoginUserControl_Load(object sender, EventArgs e)
         {
