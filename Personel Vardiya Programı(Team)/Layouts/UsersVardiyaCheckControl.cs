@@ -21,5 +21,14 @@ namespace Personel_Vardiya_Programı_Team_.Layouts
         {
 
         }
+
+        private void customButton2_Click(object sender, EventArgs e) //geri butonu
+        {
+            MainMenuUserControl c = new MainMenuUserControl(); // personel main
+            this.Dispose();
+            GC.Collect();
+            c.Dock = DockStyle.Fill;
+            Application.OpenForms[1].Controls.Add(c);
+        }
     }
 }
