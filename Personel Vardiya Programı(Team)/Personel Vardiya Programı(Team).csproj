@@ -54,20 +54,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PersonelForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PersonelForm.Designer.cs">
-      <DependentUpon>PersonelForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Database Connection\MySqlConnection.cs" />
-    <Compile Include="LayoutManager.cs" />
-    <Compile Include="Layouts\UserControl1.cs">
+    <Compile Include="Layouts\MainMenuUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Layouts\UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="Layouts\MainMenuUserControl.Designer.cs">
+      <DependentUpon>MainMenuUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layouts\UsersUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layouts\UsersUserControl.Designer.cs">
+      <DependentUpon>UsersUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database Connection\MySqlCustomConnection.cs" />
+    <Compile Include="LayoutManager.cs" />
     <Compile Include="Layouts\LoginUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -88,20 +88,14 @@
     <Compile Include="SetupForm.Designer.cs">
       <DependentUpon>SetupForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VardiyaForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VardiyaForm.Designer.cs">
-      <DependentUpon>VardiyaForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="PersonelForm.resx">
-      <DependentUpon>PersonelForm.cs</DependentUpon>
+    <EmbeddedResource Include="Layouts\MainMenuUserControl.resx">
+      <DependentUpon>MainMenuUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layouts\UsersUserControl.resx">
+      <DependentUpon>UsersUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Layouts\LoginUserControl.resx">
       <DependentUpon>LoginUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Layouts\UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -118,9 +112,6 @@
     </Compile>
     <EmbeddedResource Include="SetupForm.resx">
       <DependentUpon>SetupForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VardiyaForm.resx">
-      <DependentUpon>VardiyaForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

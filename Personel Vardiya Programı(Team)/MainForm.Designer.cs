@@ -34,10 +34,7 @@
             this.FormClose = new SoliteraxControlLibrary.CustomPictureBox();
             this.ellipseControl1 = new SoliteraxControlLibrary.EllipseControl();
             this.componentHover1 = new SoliteraxControlLibrary.ComponentHover();
-            this.customButton1 = new SoliteraxControlLibrary.CustomButton();
-            this.customButton2 = new SoliteraxControlLibrary.CustomButton();
-            this.customButton3 = new SoliteraxControlLibrary.CustomButton();
-            this.customButton4 = new SoliteraxControlLibrary.CustomButton();
+            this.loginUserControl2 = new Personel_Vardiya_Programı_Team_.Layouts.LoginUserControl();
             this.ustPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FormMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FormClose)).BeginInit();
@@ -64,9 +61,8 @@
             this.ustPanel.haveBorder = false;
             this.ustPanel.haveEllipse = false;
             this.ustPanel.Location = new System.Drawing.Point(0, 0);
-            this.ustPanel.Margin = new System.Windows.Forms.Padding(4);
             this.ustPanel.Name = "ustPanel";
-            this.ustPanel.Size = new System.Drawing.Size(1436, 41);
+            this.ustPanel.Size = new System.Drawing.Size(1077, 33);
             this.ustPanel.TabIndex = 0;
             // 
             // headerText
@@ -83,10 +79,9 @@
             this.headerText.borderTopColor = System.Drawing.Color.White;
             this.headerText.borderTopSize = 1;
             this.headerText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.headerText.Location = new System.Drawing.Point(53, 7);
-            this.headerText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.headerText.Location = new System.Drawing.Point(40, 6);
             this.headerText.Name = "headerText";
-            this.headerText.Size = new System.Drawing.Size(244, 25);
+            this.headerText.Size = new System.Drawing.Size(195, 20);
             this.headerText.TabIndex = 2;
             this.headerText.Text = "Personel Vardiya Programı";
             // 
@@ -106,10 +101,9 @@
             this.FormMinimize.borderTopSize = 1;
             this.FormMinimize.haveBorder = false;
             this.FormMinimize.Image = global::Personel_Vardiya_Programı_Team_.Properties.Resources.minimize;
-            this.FormMinimize.Location = new System.Drawing.Point(1321, 0);
-            this.FormMinimize.Margin = new System.Windows.Forms.Padding(4);
+            this.FormMinimize.Location = new System.Drawing.Point(991, 0);
             this.FormMinimize.Name = "FormMinimize";
-            this.FormMinimize.Size = new System.Drawing.Size(45, 41);
+            this.FormMinimize.Size = new System.Drawing.Size(34, 33);
             this.FormMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FormMinimize.TabIndex = 1;
             this.FormMinimize.TabStop = false;
@@ -131,10 +125,9 @@
             this.FormClose.borderTopSize = 1;
             this.FormClose.haveBorder = false;
             this.FormClose.Image = global::Personel_Vardiya_Programı_Team_.Properties.Resources.close;
-            this.FormClose.Location = new System.Drawing.Point(1375, 0);
-            this.FormClose.Margin = new System.Windows.Forms.Padding(4);
+            this.FormClose.Location = new System.Drawing.Point(1031, 0);
             this.FormClose.Name = "FormClose";
-            this.FormClose.Size = new System.Drawing.Size(45, 41);
+            this.FormClose.Size = new System.Drawing.Size(34, 33);
             this.FormClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FormClose.TabIndex = 0;
             this.FormClose.TabStop = false;
@@ -150,99 +143,25 @@
             this.componentHover1.ReferencedControl = this.ustPanel;
             this.componentHover1.TargetControl = this;
             // 
-            // customButton1
+            // loginUserControl2
             // 
-            this.customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.customButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.customButton1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton1.BorderRadius = 10;
-            this.customButton1.BorderSize = 3;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(58, 81);
-            this.customButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(623, 490);
-            this.customButton1.TabIndex = 2;
-            this.customButton1.Text = "Personel Ekle , Sil ve Güncelleme\r\n\r\n";
-            this.customButton1.TextColor = System.Drawing.Color.White;
-            this.customButton1.UseVisualStyleBackColor = false;
-            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
-            // 
-            // customButton2
-            // 
-            this.customButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.customButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.customButton2.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton2.BorderRadius = 10;
-            this.customButton2.BorderSize = 3;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.ForeColor = System.Drawing.Color.White;
-            this.customButton2.Location = new System.Drawing.Point(762, 81);
-            this.customButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(604, 109);
-            this.customButton2.TabIndex = 3;
-            this.customButton2.Text = " Otomatik Vardiya Ayarlama";
-            this.customButton2.TextColor = System.Drawing.Color.White;
-            this.customButton2.UseVisualStyleBackColor = false;
-            this.customButton2.Click += new System.EventHandler(this.customButton2_Click);
-            // 
-            // customButton3
-            // 
-            this.customButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.customButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.customButton3.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton3.BorderRadius = 10;
-            this.customButton3.BorderSize = 3;
-            this.customButton3.FlatAppearance.BorderSize = 0;
-            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton3.ForeColor = System.Drawing.Color.White;
-            this.customButton3.Location = new System.Drawing.Point(762, 314);
-            this.customButton3.Margin = new System.Windows.Forms.Padding(4);
-            this.customButton3.Name = "customButton3";
-            this.customButton3.Size = new System.Drawing.Size(604, 109);
-            this.customButton3.TabIndex = 4;
-            this.customButton3.Text = " Vardiya güncelle";
-            this.customButton3.TextColor = System.Drawing.Color.White;
-            this.customButton3.UseVisualStyleBackColor = false;
-            this.customButton3.Click += new System.EventHandler(this.customButton3_Click);
-            // 
-            // customButton4
-            // 
-            this.customButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.customButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.customButton4.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton4.BorderRadius = 10;
-            this.customButton4.BorderSize = 3;
-            this.customButton4.FlatAppearance.BorderSize = 0;
-            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton4.ForeColor = System.Drawing.Color.White;
-            this.customButton4.Location = new System.Drawing.Point(1166, 635);
-            this.customButton4.Margin = new System.Windows.Forms.Padding(4);
-            this.customButton4.Name = "customButton4";
-            this.customButton4.Size = new System.Drawing.Size(200, 49);
-            this.customButton4.TabIndex = 5;
-            this.customButton4.Text = " Çıkış Yap";
-            this.customButton4.TextColor = System.Drawing.Color.White;
-            this.customButton4.UseVisualStyleBackColor = false;
-            this.customButton4.Click += new System.EventHandler(this.customButton4_Click);
+            this.loginUserControl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.loginUserControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loginUserControl2.Location = new System.Drawing.Point(0, 33);
+            this.loginUserControl2.Name = "loginUserControl2";
+            this.loginUserControl2.Size = new System.Drawing.Size(1077, 572);
+            this.loginUserControl2.TabIndex = 1;
+            this.loginUserControl2.Load += new System.EventHandler(this.loginUserControl2_Load);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.ClientSize = new System.Drawing.Size(1436, 745);
-            this.Controls.Add(this.customButton4);
-            this.Controls.Add(this.customButton3);
-            this.Controls.Add(this.customButton2);
-            this.Controls.Add(this.customButton1);
+            this.ClientSize = new System.Drawing.Size(1077, 605);
+            this.Controls.Add(this.loginUserControl2);
             this.Controls.Add(this.ustPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -263,10 +182,7 @@
         private SoliteraxControlLibrary.CustomPictureBox FormMinimize;
         private Layouts.LoginUserControl loginUserControl1;
         private SoliteraxControlLibrary.ComponentHover componentHover1;
-        private SoliteraxControlLibrary.CustomButton customButton1;
-        private SoliteraxControlLibrary.CustomButton customButton2;
-        private SoliteraxControlLibrary.CustomButton customButton3;
-        private SoliteraxControlLibrary.CustomButton customButton4;
+        private Layouts.LoginUserControl loginUserControl2;
     }
 }
 

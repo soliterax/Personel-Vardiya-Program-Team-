@@ -23,9 +23,13 @@ namespace Personel_Vardiya_Programı_Team_.Layouts
             if(usernameTxt.Texts.Equals("admin") && passwordTxt.Texts.Equals("1234"))
             {
                 this.Dispose();
-                UserControl1 c = new UserControl1();
+                Application.OpenForms[0].Controls.Remove(this);
+                GC.Collect();
+                MainMenuUserControl c = new MainMenuUserControl();
+                
                 c.Dock = DockStyle.Fill;
-                Application.OpenForms[0].Controls.Add(c);
+                c.Visible = true;
+                Application.OpenForms[1].Controls.Add(c);
             }
 
         }

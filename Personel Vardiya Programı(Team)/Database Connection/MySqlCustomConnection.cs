@@ -9,7 +9,7 @@ using MySql.Data.MySqlClient;
 
 namespace Personel_Vardiya_Programı_Team_.Database_Connection
 {
-    public class MySqlConnection
+    public class MySqlCustomConnection
     {
 
         string connectionKey = null;
@@ -18,21 +18,22 @@ namespace Personel_Vardiya_Programı_Team_.Database_Connection
         MySqlCommand cmd;
         MySqlDataReader dr;
 
-        public MySqlConnection()
+        public MySqlCustomConnection()
         {
-            this.connectionKey = "Server=soliterax.com;Database=solitera_Deneme;user=solitera;Pwd=Bb39676321436;SslMode=none";
+            this.connectionKey = "Server=3.67.188.79;Database=vardiya;user=root;Pwd=;SslMode=none";
         }
 
-        public MySqlConnection(string connectionKey)
+        /*public MySqlConnection(string connectionKey)
         {
             this.connectionKey = connectionKey;
-        }
+        }*/
 
         public void Connect()
         {
-            con = new MySqlConnection("Server=soliterax.com;Database=solitera_Deneme;user=solitera;Pwd=Bb39676321436;SslMode=none");
-            con.Connect();
-            MessageBox.Show("Bağllantı Sağlandı");
+            con = new MySqlConnection("Server=3.67.188.79;Database=vardiya;Uid=root;Pwd=''");
+            con.Open();
+            if(con.State == System.Data.ConnectionState.Open)
+                MessageBox.Show("Bağllantı Sağlandı");
         }
 
         public void setConnectionKey(string connectionKey)

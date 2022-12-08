@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Personel_Vardiya_Programı_Team_.Database_Connection;
 
 namespace Personel_Vardiya_Programı_Team_
 {
@@ -25,6 +26,9 @@ namespace Personel_Vardiya_Programı_Team_
             timer.Interval = 1000;
             timer.Tick += Timer_Tick;
             timer.Start();
+
+            //MySqlCustomConnection c = new MySqlCustomConnection();
+            //c.Connect();
         }
 
         int i = 0;
