@@ -74,6 +74,18 @@
     <Compile Include="Layouts\LoginUserControl.Designer.cs">
       <DependentUpon>LoginUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layouts\UsersVardiyaCheckControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layouts\UsersVardiyaCheckControl.Designer.cs">
+      <DependentUpon>UsersVardiyaCheckControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\UserVardiyaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layouts\UserVardiyaControl.Designer.cs">
+      <DependentUpon>UserVardiyaControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
