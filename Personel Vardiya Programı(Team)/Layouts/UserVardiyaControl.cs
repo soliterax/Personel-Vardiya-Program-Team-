@@ -10,26 +10,28 @@ using System.Windows.Forms;
 
 namespace Personel_Vardiya_Programı_Team_.Layouts
 {
-    public partial class UsersUserControl : UserControl
+    public partial class UserVardiyaControl : UserControl
     {
-        public UsersUserControl()
+        public UserVardiyaControl()
         {
             InitializeComponent();
         }
 
-        private void customButton2_Click(object sender, EventArgs e)
+        private void UserVardiyaControl_Load(object sender, EventArgs e)
         {
 
-            //Main Menu Lazım
+        }
+
+        private void customButton2_Click(object sender, EventArgs e) //geri butonu
+        {
             MainMenuUserControl c = new MainMenuUserControl();
             this.Dispose();
             GC.Collect();
             c.Dock = DockStyle.Fill;
             Application.OpenForms[1].Controls.Add(c);
-
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void customButton1_Click(object sender, EventArgs e) // kaydet butonu
         {
 
         }
