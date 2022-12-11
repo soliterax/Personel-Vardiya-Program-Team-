@@ -25,10 +25,10 @@ namespace Personel_Vardiya_Programı_Team_
             this.StartPosition = FormStartPosition.CenterScreen;
             timer.Interval = 1000;
             timer.Tick += Timer_Tick;
-            //timer.Start();
-
+            timer.Start();
+            /*
             MySqlCustomConnection c = new MySqlCustomConnection();
-            c.Connect();
+            c.Connect();*/
         }
 
         int i = 0;

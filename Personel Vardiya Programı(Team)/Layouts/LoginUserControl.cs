@@ -20,13 +20,24 @@ namespace Personel_Vardiya_Programı_Team_.Layouts
         private void customButton1_Click(object sender, EventArgs e)
         {
 
-            if(usernameTxt.Texts.Equals("admin") && passwordTxt.Texts.Equals("1234"))
+            if (usernameTxt.Texts.Equals("admin") && passwordTxt.Texts.Equals("1234"))
             {
                 this.Dispose();
                 Application.OpenForms[0].Controls.Remove(this);
                 GC.Collect();
                 MainMenuUserControl c = new MainMenuUserControl();
-                
+
+                c.Dock = DockStyle.Fill;
+                c.Visible = true;
+                Application.OpenForms[1].Controls.Add(c);
+            }
+            if (usernameTxt.Texts.Equals("personel") && passwordTxt.Texts.Equals("1234"))
+            {
+                this.Dispose();
+                Application.OpenForms[0].Controls.Remove(this);
+                GC.Collect();
+                UsersVardiyaCheckControl c = new UsersVardiyaCheckControl();
+
                 c.Dock = DockStyle.Fill;
                 c.Visible = true;
                 Application.OpenForms[1].Controls.Add(c);

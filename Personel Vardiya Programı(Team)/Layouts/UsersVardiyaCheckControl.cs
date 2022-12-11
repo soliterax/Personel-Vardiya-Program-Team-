@@ -24,7 +24,7 @@ namespace Personel_Vardiya_Programı_Team_.Layouts
 
         private void customButton2_Click(object sender, EventArgs e) //geri butonu
         {
-            MainMenuUserControl c = new MainMenuUserControl(); // personel main
+            LoginUserControl c = new LoginUserControl(); 
             this.Dispose();
             GC.Collect();
             c.Dock = DockStyle.Fill;
