@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -142,8 +142,6 @@ namespace Personel_Vardiya_Programı_Team_
 
             Controls.Add(setup1);
             Controls.Add(bar);
-
-
         }
 
         private void Setup1NextButton_Click(object sender, EventArgs e)
@@ -154,7 +152,9 @@ namespace Personel_Vardiya_Programı_Team_
         private void SetupForm_Load(object sender, EventArgs e)
         {
             
-            
+            Mainform form = new MainForm();
+            form.Show();
+            this.Hide();
             
             
         }
