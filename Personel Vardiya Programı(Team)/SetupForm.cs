@@ -152,7 +152,7 @@ namespace Personel_Vardiya_Programı_Team_
         private void SetupForm_Load(object sender, EventArgs e)
         {
             
-            Mainform form = new MainForm();
+            MainForm form = new MainForm();
             form.Show();
             this.Hide();
             
