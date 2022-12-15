@@ -203,10 +203,6 @@ namespace Personel_Vardiya_Programı_Team_
 
         private void SetupForm_Load(object sender, EventArgs e)
         {
-
-            
-
-
             
 
             //dm.SendData("insert into Personals(name, surname, phone) values ('Ramazan', 'Solak', '+905667413508')");
