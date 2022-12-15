@@ -182,17 +182,20 @@ namespace Personel_Vardiya_Programı_Team_
             if (bar.Value != 30)
                 return;
             MainForm form = new MainForm();
-            ConnectDatabase db = new ConnectDatabase($"Data Source={setup1IPAdress.Texts};Initial Catalog={setup1DatabaseName.Texts};User ID={setup1Username.Texts};Password={setup1Password.Texts}", SoliteraxConnection.ConnectionType.SQL);
-            
-            db.Connect();
-            DatabaseManager dm = db.GetManager();
-            DataTable dt = dm.GetData("select * from Personals");
-            string result = "";
-            for (int i = 0; i < dt.Rows.Count; i++)
+            if (!setup1IPAdress.Texts.Equals(""))
             {
-                result += dt.Rows[i][0] + " " + dt.Rows[i][1] + " " + dt.Rows[i][2] + " " + dt.Rows[i][3] + Environment.NewLine;
+                ConnectDatabase db = new ConnectDatabase($"Data Source={setup1IPAdress.Texts};Initial Catalog={setup1DatabaseName.Texts};User ID={setup1Username.Texts};Password={setup1Password.Texts}", SoliteraxConnection.ConnectionType.SQL);
+
+                db.Connect();
+                DatabaseManager dm = db.GetManager();
+                DataTable dt = dm.GetData("select * from Personals");
+                string result = "";
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    result += dt.Rows[i][0] + " " + dt.Rows[i][1] + " " + dt.Rows[i][2] + " " + dt.Rows[i][3] + Environment.NewLine;
+                }
+                MessageBox.Show(result);
             }
-            MessageBox.Show(result);
             form.Show();
             base.Hide();
             this.Hide();
