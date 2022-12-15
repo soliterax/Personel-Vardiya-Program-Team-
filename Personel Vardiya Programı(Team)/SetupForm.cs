@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
@@ -36,11 +37,13 @@ namespace Personel_Vardiya_Programı_Team_
 
         //Setup Stage 2 Components Registry
         CustomPanel setup2 = new CustomPanel();
+        
         //Setup Stage 3 Components Registry
         CustomPanel setup3 = new CustomPanel();
 
         //Setup Progress Bar
         CustomProgressbar bar = new CustomProgressbar();
+        CustomLabel progressText = new CustomLabel();
 
         void setupComponents()
         {
@@ -52,7 +55,7 @@ namespace Personel_Vardiya_Programı_Team_
             #region Setup Stage 1 Component Configuration
 
             //Setup Stage 1 components
-            setup1.Size = new Size(this.Width, (int)(this.Height * 0.98));
+            setup1.Size = new Size(this.Width, (int)(this.Height * 0.95));
             setup1.Location = new Point(0, 0);
             setup1.Name = "setup1";
             setup1.haveBorder = false;
@@ -67,6 +70,7 @@ namespace Personel_Vardiya_Programı_Team_
             setup1IPAdress.BorderSize = 2;
             setup1IPAdress.BackColor = ColorTranslator.FromHtml("#353535");
             setup1IPAdress.PlaceholderText = "Sunucu IP";
+            setup1IPAdress.ForeColor = Color.White;
 
             //Setup1 Database Name Component
             setup1DatabaseName.Size = new Size(setup1IPAdress.Width, setup1IPAdress.Height);
@@ -77,6 +81,7 @@ namespace Personel_Vardiya_Programı_Team_
             setup1DatabaseName.BackColor = setup1IPAdress.BackColor;
             setup1DatabaseName.PlaceholderColor = setup1IPAdress.PlaceholderColor;
             setup1DatabaseName.PlaceholderText = "Database Adı";
+            setup1DatabaseName.ForeColor = Color.White;
 
             //Setup1 Database Username component
             setup1Username.Size = new Size(setup1IPAdress.Width, setup1IPAdress.Height);
@@ -87,6 +92,7 @@ namespace Personel_Vardiya_Programı_Team_
             setup1Username.BackColor = setup1IPAdress.BackColor;
             setup1Username.PlaceholderColor = setup1IPAdress.PlaceholderColor;
             setup1Username.PlaceholderText = "Database Kullanıcı Adı";
+            setup1Username.ForeColor = Color.White;
 
             //Setup1 Database Password Component
             setup1Password.Size = new Size(setup1IPAdress.Width, setup1IPAdress.Height);
@@ -97,6 +103,7 @@ namespace Personel_Vardiya_Programı_Team_
             setup1Password.BackColor = setup1IPAdress.BackColor;
             setup1Password.PlaceholderColor = setup1IPAdress.PlaceholderColor;
             setup1Password.PlaceholderText = "Database Sifre";
+            setup1Password.ForeColor = Color.White;
 
 
             //Setup1 Database Port Component
@@ -108,6 +115,7 @@ namespace Personel_Vardiya_Programı_Team_
             setup1Port.BackColor = setup1IPAdress.BackColor;
             setup1Port.PlaceholderColor = setup1IPAdress.PlaceholderColor;
             setup1Port.PlaceholderText = "Database Port";
+            setup1Port.ForeColor = Color.White;
 
             //Setup1 Next Button Component
             setup1NextButton.Size = setup1Port.Size;
@@ -119,6 +127,18 @@ namespace Personel_Vardiya_Programı_Team_
             setup1NextButton.BackColor = this.BackColor;
             setup1NextButton.Text = "Sıradaki";
             setup1NextButton.Click += Setup1NextButton_Click;
+            setup1NextButton.ForeColor = Color.White;
+
+            #endregion
+
+            #region Stage 2 Component Configuration
+
+            //Setup Stage 2 Component
+            setup2.Size = new Size(this.Width, (int)(this.Height * 0.95));
+            setup2.Location = new Point(0, 0);
+            setup2.Name = "setup1";
+            setup2.haveBorder = false;
+            setup2.haveEllipse = false;
 
             #endregion
 
@@ -133,12 +153,23 @@ namespace Personel_Vardiya_Programı_Team_
             #endregion
 
             //Progress Bar 
-            bar.Size = new Size(this.Width, (int)(this.Height * 0.02));
+            bar.Size = new Size(this.Width, (int)(this.Height * 0.05));
             bar.Location = new Point(0, this.Height - bar.Size.Height);
             bar.Name = "bar";
             bar.BackColor = setup1IPAdress.BackColor;
-            bar.ProgressValue = 20;
             bar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            bar.Value = 10;
+            bar.ShowValue = CustomProgressbar.TextPosition.None;
+
+            progressText.Size = bar.Size;
+            progressText.Location = new Point(0, 0);
+            progressText.Name = "progressText";
+            progressText.BackColor = Color.Transparent;
+            progressText.Anchor = AnchorStyles.Left;
+            progressText.Font = new Font("Comic Sans MS", 12, FontStyle.Regular);
+            progressText.Text = "Kullanıcı Girişi Bekleniyor...";
+
+            bar.Controls.Add(progressText);
 
             Controls.Add(setup1);
             Controls.Add(bar);
@@ -146,17 +177,36 @@ namespace Personel_Vardiya_Programı_Team_
 
         private void Setup1NextButton_Click(object sender, EventArgs e)
         {
-            bar.ProgressValue += 5;
+            bar.Value += 10;
+            progressText.Text = "Kurulum Yapılıyor...";
+            if (bar.Value != 30)
+                return;
+            MainForm form = new MainForm();
+            if (!setup1IPAdress.Texts.Equals(""))
+            {
+                ConnectDatabase db = new ConnectDatabase($"Data Source={setup1IPAdress.Texts};Initial Catalog={setup1DatabaseName.Texts};User ID={setup1Username.Texts};Password={setup1Password.Texts}", SoliteraxConnection.ConnectionType.SQL);
+
+                db.Connect();
+                DatabaseManager dm = db.GetManager();
+                DataTable dt = dm.GetData("select * from Personals");
+                string result = "";
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    result += dt.Rows[i][0] + " " + dt.Rows[i][1] + " " + dt.Rows[i][2] + " " + dt.Rows[i][3] + Environment.NewLine;
+                }
+                MessageBox.Show(result);
+            }
+            form.Show();
+            base.Hide();
+            this.Hide();
         }
 
         private void SetupForm_Load(object sender, EventArgs e)
         {
             
-            MainForm form = new MainForm();
-            form.Show();
-            this.Hide();
-            
-            
+
+            //dm.SendData("insert into Personals(name, surname, phone) values ('Ramazan', 'Solak', '+905667413508')");
+
         }
 
     }
