@@ -14,9 +14,11 @@ namespace Personel_Vardiya_Programı_Team_
         [STAThread]
         static void Main()
         {
+            Control.CheckForIllegalCrossThreadCalls = false;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new SetupForm());
+            
         }
     }
 }
