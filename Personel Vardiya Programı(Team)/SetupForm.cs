@@ -76,7 +76,7 @@ namespace Personel_Vardiya_Programı_Team_
             bar.ProgressColorLeft = Color.MediumSlateBlue;
             bar.ProgressColorRight = Color.MediumSlateBlue;
             bar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            bar.Value = 10;
+            bar.Value = 0;
             bar.Animation = 4;
             bar.AnimationStep = 10;
             bar.BackgroundImage = ((System.Drawing.Image)(new System.ComponentModel.ComponentResourceManager(typeof(SetupForm)).GetObject("bunifuProgressBar1.BackgroundImage")));
