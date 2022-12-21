@@ -3,6 +3,7 @@ using SoliteraxLibrary;
 using SoliteraxLibrary.FileSystem;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -74,23 +75,35 @@ namespace Personel_Vardiya_Programı_Team_.Layouts.SetupPanels
             this.f.setupAddProgress(25);
             if (s < str.Length)
                 row.Text = str[s];
-            if(s == 2)
+            if(s == 3)
             {
+                
                 SoliteraxLibrary.FileSystem.SoliteraxFile file = new SoliteraxLibrary.FileSystem.SoliteraxFile(Environment.CurrentDirectory + "\\connection.txt");
                 SonsuzLock sl = new SonsuzLock("h@xt@r", 3);
+                if (file.Read().Length <= 0) { return; }
                 string s = sl.sifrecoz(file.Read());
-                ConnectionMemory.conn = new SoliteraxLibrary.SQLSystem.ConnectDatabase(s, SoliteraxConnection.ConnectionType.SQL).Connect();
+                try
+                {
+                    ConnectionMemory.conn = new SoliteraxLibrary.SQLSystem.ConnectDatabase(s, SoliteraxConnection.ConnectionType.SQL).Connect();
+                } catch (SqlException e)
+                {
+                    MessageBox.Show("İnternetiniz Veri tabanına bağlanmanızı engelliyor", "Veri Tabanı Bağlantı Hatası!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Exit();
+                }
             }
             if (s == 4)
             {
+                t.Stop();
                 if (new SoliteraxFile(Environment.CurrentDirectory + "\\connection.txt").Read().Length <= 0)
                 {
                     SetupStage1 st1 = new SetupStage1();
                     st1.setupComponents(this.f);
                     this.f.Controls[0].Dispose();
+                    this.f.Controls.Add(st1.getPanel());
+                    this.f.setupAddProgress(-100);
                     return;
                 }
-                t.Stop();
+               
                 MainForm f = new MainForm();
                 this.f.Hide();
                 f.Show();

@@ -30,7 +30,11 @@ namespace Personel_Vardiya_Programı_Team_.Layouts
 
         private void customButton2_Click(object sender, EventArgs e) // otomatik vardiya
         {
-           
+            this.Dispose();
+            GC.Collect();
+            UserVardiyaPreferencesControl c = new UserVardiyaPreferencesControl();
+            c.Dock = DockStyle.Fill;
+            Application.OpenForms[1].Controls.Add(c);
 
         }
 
