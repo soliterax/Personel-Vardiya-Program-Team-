@@ -18,6 +18,7 @@ using Bunifu.Framework.UI;
 using BunifuAnimatorNS;
 using SoliteraxLibrary.SQLSystem;
 using Personel_Vardiya_Programı_Team_.Layouts.SetupPanels;
+using System.IO;
 
 namespace Personel_Vardiya_Programı_Team_
 {
@@ -33,7 +34,7 @@ namespace Personel_Vardiya_Programı_Team_
         CustomLabel label = new CustomLabel();
 
         //Setup Stage 1 Components Registry
-        SetupStage1 st1 = new SetupStage1();
+        SetupControl st1 = new SetupControl();
 
         //Setup Stage 2 Components Registry
         CustomPanel setup2 = new CustomPanel();
@@ -44,9 +45,11 @@ namespace Personel_Vardiya_Programı_Team_
         //Setup Progress Bar
         Bunifu.UI.Winforms.BunifuProgressBar bar = new Bunifu.UI.Winforms.BunifuProgressBar();
         CustomLabel progressText = new CustomLabel();
-
+       
         void setupComponents()
         {
+
+            
 
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Width = (int)(Screen.PrimaryScreen.WorkingArea.Width * 0.6);
@@ -72,7 +75,7 @@ namespace Personel_Vardiya_Programı_Team_
             bar.Size = new Size(this.Width, (int)(this.Height * 0.05));
             bar.Location = new Point(0, this.Height - bar.Size.Height);
             bar.Name = "bar";
-            bar.ProgressBackColor = st1.getPanel().BackColor;
+            bar.ProgressBackColor = st1.GetPanel().BackColor;
             bar.ProgressColorLeft = Color.MediumSlateBlue;
             bar.ProgressColorRight = Color.MediumSlateBlue;
             bar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
@@ -98,8 +101,9 @@ namespace Personel_Vardiya_Programı_Team_
 
             bar.Controls.Add(progressText);
 
-            Controls.Add(st1.getPanel());
+            Controls.Add(st1.GetPanel());
             Controls.Add(bar);
+            st1.StartInitialize();
         }
 
         public void setupAddProgress(int value)
@@ -116,12 +120,6 @@ namespace Personel_Vardiya_Programı_Team_
 
         private void SetupForm_Load(object sender, EventArgs e)
         {
-
-
-
-
-
-
 
 
             //dm.SendData("insert into Personals(name, surname, phone) values ('Ramazan', 'Solak', '+905667413508')");
