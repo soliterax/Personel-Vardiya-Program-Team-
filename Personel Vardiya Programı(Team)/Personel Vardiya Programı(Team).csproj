@@ -36,6 +36,7 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
       <HintPath>D:\Coding\C#\Libraries\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
@@ -44,6 +45,9 @@
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
       <HintPath>D:\Coding\C#\Libraries\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>D:\Coding\C#\Libraries\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
       <HintPath>D:\Coding\C#\Libraries\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
@@ -120,10 +124,12 @@
     <Compile Include="Layouts\MainMenuUserControl.Designer.cs">
       <DependentUpon>MainMenuUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layouts\SetupPanels\SetupControl.cs" />
     <Compile Include="Layouts\SetupPanels\SetupStage1.cs" />
     <Compile Include="Layouts\SetupPanels\SetupStage2.cs" />
     <Compile Include="Layouts\SetupPanels\SetupStage3.cs" />
     <Compile Include="Layouts\SetupPanels\SetupStage4.cs" />
+    <Compile Include="Layouts\SetupPanels\SetupStage5.cs" />
     <Compile Include="Layouts\UsersUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -228,6 +234,8 @@
   <ItemGroup>
     <None Include="Resources\minimize.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\X.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

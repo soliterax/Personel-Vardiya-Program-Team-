@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SoliteraxControlLibrary;
 using SoliteraxLibrary;
+using SoliteraxLibrary.FileSystem;
 using SoliteraxLibrary.SQLSystem;
 
 namespace Personel_Vardiya_Programı_Team_.Layouts.SetupPanels
@@ -132,24 +134,32 @@ namespace Personel_Vardiya_Programı_Team_.Layouts.SetupPanels
         private void Setup1NextButton_Click(object sender, EventArgs e)
         {
             
-            MainForm form = new MainForm();
             f.setupAddProgress(10);
             f.setupSetProgressText("Kurulum Yapılıyor...");
-            if (!setup1IPAdress.Texts.Equals(""))
+            if (!setup1IPAdress.Texts.Equals("") && new SoliteraxFile(Environment.CurrentDirectory + "\\connection.txt").Read().Length <=0)
             {
                 ConnectDatabase db = new ConnectDatabase($"Data Source={setup1IPAdress.Texts};Initial Catalog={setup1DatabaseName.Texts};User ID={setup1Username.Texts};Password={setup1Password.Texts}", (setup1DatabaseType.Texts.Equals("SQL")) ? SoliteraxConnection.ConnectionType.SQL : SoliteraxConnection.ConnectionType.Access);
                 //ConnectDatabase db = new ConnectDatabase($"Data Source=server.soliterax.com;Initial Catalog=Vardiya;User ID=haxtar;Password=Bb39676321436", SoliteraxConnection.ConnectionType.SQL);
                 SetupForm.ConnectionMemory.conn = db;
                 SetupStage2 ss2 = new SetupStage2();
                 ss2.setupComponent(f);
-                Application.OpenForms[0].Controls[0].Dispose();
+                Application.OpenForms[0].Controls[1].Dispose();
                 Application.OpenForms[0].Controls.Add(ss2.GetPanel());
                 GC.Collect();
                 ss2.StartSetup();
-                
-                
+
+                return;
+
             }
-            
+            MainForm form = new MainForm();
+            form.Show();
+
+
+            GC.Collect();
+            Application.OpenForms[0].Controls.Clear();
+            Application.OpenForms[0].Hide();
+            GC.Collect();
+            return;
         }
 
         

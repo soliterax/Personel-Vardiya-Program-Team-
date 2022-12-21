@@ -126,7 +126,11 @@ namespace Personel_Vardiya_Programı_Team_.Layouts.SetupPanels
 
         private void NextButton_Click(object sender, EventArgs e)
         {
-            
+            SetupStage5 st5 = new SetupStage5();
+            st5.SetupComponents(f);
+            Application.OpenForms[0].Controls[1].Dispose();
+            Application.OpenForms[0].Controls.Add(st5.GetPanel());
+            st5.StartProcess();
         }
 
         protected void ListTable()

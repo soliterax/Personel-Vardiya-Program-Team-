@@ -26,6 +26,7 @@ namespace Personel_Vardiya_Programı_Team_
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            
             setupLayout();
         }
 
