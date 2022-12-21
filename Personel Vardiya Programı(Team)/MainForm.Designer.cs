@@ -79,6 +79,7 @@
             this.headerText.borderTopColor = System.Drawing.Color.White;
             this.headerText.borderTopSize = 1;
             this.headerText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.headerText.haveBorder = false;
             this.headerText.Location = new System.Drawing.Point(40, 6);
             this.headerText.Name = "headerText";
             this.headerText.Size = new System.Drawing.Size(195, 20);
@@ -163,6 +164,7 @@
             this.Controls.Add(this.ustPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ustPanel.ResumeLayout(false);
