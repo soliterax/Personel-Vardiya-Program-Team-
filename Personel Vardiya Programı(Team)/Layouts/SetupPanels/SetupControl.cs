@@ -1,4 +1,5 @@
-﻿using SoliteraxControlLibrary;
+﻿using Bunifu.Framework.UI;
+using SoliteraxControlLibrary;
 using SoliteraxLibrary;
 using SoliteraxLibrary.FileSystem;
 using System;
@@ -19,6 +20,8 @@ namespace Personel_Vardiya_Programı_Team_.Layouts.SetupPanels
 
         protected CustomPanel panel = new CustomPanel();
 
+        protected BunifuCircleProgressbar bar = new BunifuCircleProgressbar();
+
         protected CustomLabel label = new CustomLabel();
         protected CustomLabel row = new CustomLabel();
 
@@ -34,6 +37,17 @@ namespace Personel_Vardiya_Programı_Team_.Layouts.SetupPanels
             panel.haveBorder = false;
             panel.haveEllipse = false;
             panel.BackColor = s.BackColor;
+
+            bar.Size = new Size(panel.Size.Height / 3, panel.Size.Height / 3);
+            bar.Location = new Point((panel.Size.Width / 2) - (bar.Size.Width / 2), (panel.Size.Height / 2) - (bar.Size.Height / 2));
+            bar.Value = 30;
+            bar.animated = true;
+            bar.animationIterval = 1;
+            bar.animationSpeed = 2;
+            bar.LabelVisible = false;
+            bar.BackColor = panel.BackColor;
+            bar.ProgressBackColor = bar.BackColor;
+            bar.ProgressColor = Color.MediumSlateBlue;
 
             label.Size = new Size(panel.Width, (int)(panel.Size.Height * 0.2f));
             label.Location = new Point(0, 0);
@@ -53,6 +67,7 @@ namespace Personel_Vardiya_Programı_Team_.Layouts.SetupPanels
             row.Font = new Font("Comic Sans MS", 15, FontStyle.Italic);
             row.TextAlign = ContentAlignment.MiddleCenter;
 
+            panel.Controls.Add(bar);
             panel.Controls.Add(label);
             panel.Controls.Add(row);
 
@@ -76,7 +91,10 @@ namespace Personel_Vardiya_Programı_Team_.Layouts.SetupPanels
                 row.Text = str[s];
             if(s == 2)
             {
+                
                 SoliteraxLibrary.FileSystem.SoliteraxFile file = new SoliteraxLibrary.FileSystem.SoliteraxFile(Environment.CurrentDirectory + "\\connection.txt");
+                if (file.Read().Length <= 0)
+                    return;
                 SonsuzLock sl = new SonsuzLock("h@xt@r", 3);
                 string s = sl.sifrecoz(file.Read());
                 ConnectionMemory.conn = new SoliteraxLibrary.SQLSystem.ConnectDatabase(s, SoliteraxConnection.ConnectionType.SQL).Connect();
@@ -88,6 +106,7 @@ namespace Personel_Vardiya_Programı_Team_.Layouts.SetupPanels
                     SetupStage1 st1 = new SetupStage1();
                     st1.setupComponents(this.f);
                     this.f.Controls[0].Dispose();
+                    this.f.Controls.Add(st1.getPanel());
                     return;
                 }
                 t.Stop();

@@ -33,7 +33,7 @@
             this.usernameTxt = new SoliteraxControlLibrary.CustomTextBox();
             this.passwordTxt = new SoliteraxControlLibrary.CustomTextBox();
             this.rememberme = new System.Windows.Forms.CheckBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1 = new SoliteraxControlLibrary.CustomPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -121,9 +121,22 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.panel1.borderBottomColor = System.Drawing.Color.Red;
+            this.panel1.borderBottomSize = 2;
+            this.panel1.borderColor = System.Drawing.Color.Red;
+            this.panel1.borderLeftColor = System.Drawing.Color.Red;
+            this.panel1.borderLeftSize = 2;
+            this.panel1.borderRadius = 30;
+            this.panel1.borderRightColor = System.Drawing.Color.Red;
+            this.panel1.borderRightSize = 2;
+            this.panel1.borderSize = 2;
+            this.panel1.borderTopColor = System.Drawing.Color.Red;
+            this.panel1.borderTopSize = 2;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.haveBorder = true;
+            this.panel1.haveEllipse = true;
             this.panel1.Location = new System.Drawing.Point(287, 37);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(484, 65);
@@ -142,11 +155,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox1.Image = global::Personel_Vardiya_Programı_Team_.Properties.Resources.X;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 65);
+            this.pictureBox1.Size = new System.Drawing.Size(55, 55);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -184,7 +196,7 @@
         private SoliteraxControlLibrary.CustomTextBox usernameTxt;
         private SoliteraxControlLibrary.CustomTextBox passwordTxt;
         private System.Windows.Forms.CheckBox rememberme;
-        private System.Windows.Forms.Panel panel1;
+        private SoliteraxControlLibrary.CustomPanel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;

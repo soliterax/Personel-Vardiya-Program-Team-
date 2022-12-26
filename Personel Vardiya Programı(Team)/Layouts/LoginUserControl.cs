@@ -31,17 +31,15 @@ namespace Personel_Vardiya_Programı_Team_.Layouts
             DataTable dt = ConnectionMemory.conn.GetManager().GetData("select username, password from Users");
             for(int i = 0; i < dt.Rows.Count; i++)
             {
-                if (dt.Rows[i][0].Equals(usernameTxt.Texts) && dt.Rows[i][1].Equals(passwordTxt.Texts))
-                {
-                    this.Dispose();
-                    Application.OpenForms[1].Controls.Remove(this);
-                    GC.Collect();
-                    MainMenuUserControl c = new MainMenuUserControl();
-                    c.Dock = DockStyle.Fill;
-                    c.Visible = true;
-                    Application.OpenForms[1].Controls.Add(c);
-                    return;
-                }
+                if (!dt.Rows[i][0].Equals(usernameTxt.Texts) || !dt.Rows[i][1].Equals(passwordTxt.Texts)) { continue; }
+                this.Dispose();
+                Application.OpenForms[1].Controls.Remove(this);
+                GC.Collect();
+                MainMenuUserControl c = new MainMenuUserControl();
+                c.Dock = DockStyle.Fill;
+                c.Visible = true;
+                Application.OpenForms[1].Controls.Add(c);
+                return;
             }
 
             
@@ -54,10 +52,11 @@ namespace Personel_Vardiya_Programı_Team_.Layouts
             panel1.Visible = false;
         }
 
-        int sayi = 10;
+        int sayi = 5;
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            label1.Visible = !label1.Visible;
             if (panel1.Visible)
             {
                 sayi -= 1;
