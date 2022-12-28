@@ -134,6 +134,12 @@
     <Compile Include="Layouts\MainMenuUserControl.Designer.cs">
       <DependentUpon>MainMenuUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layouts\PersonelEkle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layouts\PersonelEkle.Designer.cs">
+      <DependentUpon>PersonelEkle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layouts\SetupPanels\SetupControl.cs" />
     <Compile Include="Layouts\SetupPanels\SetupStage1.cs" />
     <Compile Include="Layouts\SetupPanels\SetupStage2.cs" />
@@ -188,6 +194,9 @@
     <EmbeddedResource Include="Layouts\MainMenuUserControl.resx">
       <DependentUpon>MainMenuUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Layouts\PersonelEkle.resx">
+      <DependentUpon>PersonelEkle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Layouts\UsersUserControl.resx">
       <DependentUpon>UsersUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Layouts\UsersVardiyaCheckControl.resx">
       <DependentUpon>UsersVardiyaCheckControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layouts\UserVardiyaControl.resx">
+      <DependentUpon>UserVardiyaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
