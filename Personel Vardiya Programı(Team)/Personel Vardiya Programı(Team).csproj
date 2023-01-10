@@ -36,27 +36,37 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
-    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
-      <HintPath>D:\Coding\C#\Libraries\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Bunifu.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
-      <HintPath>D:\Coding\C#\Libraries\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
-      <HintPath>D:\Coding\C#\Libraries\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
-      <HintPath>D:\Coding\C#\Libraries\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
-      <HintPath>D:\Coding\C#\Libraries\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel, Version=1.11.5.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
-      <HintPath>D:\Coding\C#\Libraries\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>D:\Coding\C#\Libraries\Bunifu UI WinForms 1.11.5.1\Bunifu_UI_v1.5.3.dll</HintPath>
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar, Version=1.11.5.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
@@ -118,11 +128,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutomaticSystems\AutomaticVardiyaAlgoritm.cs" />
+    <Compile Include="AutomaticSystems\DayAlgorithm.cs" />
+    <Compile Include="AutomaticSystems\MonthAlgorithm.cs" />
+    <Compile Include="AutomaticSystems\NobetList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AutomaticSystems\NobetListItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AutomaticSystems\WeekAlgorithm.cs" />
+    <Compile Include="Base_Class\Date.cs" />
+    <Compile Include="Base_Class\Personal.cs" />
+    <Compile Include="Base_Class\User.cs" />
     <Compile Include="Layouts\MainMenuUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Layouts\MainMenuUserControl.Designer.cs">
       <DependentUpon>MainMenuUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\PersonelEkle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layouts\PersonelEkle.Designer.cs">
+      <DependentUpon>PersonelEkle.cs</DependentUpon>
     </Compile>
     <Compile Include="Layouts\SetupPanels\SetupControl.cs" />
     <Compile Include="Layouts\SetupPanels\SetupStage1.cs" />
@@ -130,6 +158,18 @@
     <Compile Include="Layouts\SetupPanels\SetupStage3.cs" />
     <Compile Include="Layouts\SetupPanels\SetupStage4.cs" />
     <Compile Include="Layouts\SetupPanels\SetupStage5.cs" />
+    <Compile Include="Layouts\SystemScreens\InfoUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layouts\SystemScreens\InfoUserControl.Designer.cs">
+      <DependentUpon>InfoUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\SystemScreens\NobetMonitor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layouts\SystemScreens\NobetMonitor.Designer.cs">
+      <DependentUpon>NobetMonitor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layouts\UsersUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -143,12 +183,6 @@
     </Compile>
     <Compile Include="Layouts\LoginUserControl.Designer.cs">
       <DependentUpon>LoginUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Layouts\UsersVardiyaCheckControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Layouts\UsersVardiyaCheckControl.Designer.cs">
-      <DependentUpon>UsersVardiyaCheckControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Layouts\UserVardiyaControl.cs">
       <SubType>UserControl</SubType>
@@ -178,14 +212,23 @@
     <EmbeddedResource Include="Layouts\MainMenuUserControl.resx">
       <DependentUpon>MainMenuUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Layouts\PersonelEkle.resx">
+      <DependentUpon>PersonelEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layouts\SystemScreens\InfoUserControl.resx">
+      <DependentUpon>InfoUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layouts\SystemScreens\NobetMonitor.resx">
+      <DependentUpon>NobetMonitor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Layouts\UsersUserControl.resx">
       <DependentUpon>UsersUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Layouts\LoginUserControl.resx">
       <DependentUpon>LoginUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Layouts\UsersVardiyaCheckControl.resx">
-      <DependentUpon>UsersVardiyaCheckControl.cs</DependentUpon>
+    <EmbeddedResource Include="Layouts\UserVardiyaControl.resx">
+      <DependentUpon>UserVardiyaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.customButton1 = new SoliteraxControlLibrary.CustomButton();
             this.customButton2 = new SoliteraxControlLibrary.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -90,6 +90,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "UsersUserControl";
             this.Size = new System.Drawing.Size(1077, 572);
+            this.Load += new System.EventHandler(this.UsersUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -97,7 +98,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private Bunifu.UI.WinForms.BunifuDataGridView dataGridView1;
         private SoliteraxControlLibrary.CustomButton customButton1;
         private SoliteraxControlLibrary.CustomButton customButton2;
     }

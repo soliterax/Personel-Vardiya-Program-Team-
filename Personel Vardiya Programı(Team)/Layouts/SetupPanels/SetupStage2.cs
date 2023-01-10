@@ -58,12 +58,12 @@ namespace Personel_Vardiya_Programı_Team_.Layouts.SetupPanels
 
                             f.setupAddProgress(10);
                             Thread.Sleep(1000);
-                //CreateTable("users");
+                CreateTable("users");
                             f.setupAddProgress(10);
                             Thread.Sleep(1000);
-                //CreateTable("personals");
+                CreateTable("personals");
                             Thread.Sleep(1000);
-                //CreateTable("saat");
+                CreateTable("saat");
 
                             box.Items.Add("Son Ayarlamalar yapılıyor...");
                             f.setupAddProgress(10);
