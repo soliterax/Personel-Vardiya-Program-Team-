@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Personel_Vardiya_Programı_Team_.SetupForm;
 
 namespace Personel_Vardiya_Programı_Team_.Layouts
 {
@@ -28,5 +29,12 @@ namespace Personel_Vardiya_Programı_Team_.Layouts
             Application.OpenForms[1].Controls.Add(c);
 
         }
+
+        private void UsersUserControl_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = ConnectionMemory.conn.GetManager().GetData("select * from Users");
+        }
+
+
     }
 }

@@ -17,13 +17,11 @@ namespace Personel_Vardiya_Programı_Team_.Layouts.SetupPanels
         SetupForm f;
 
         protected CustomPanel panel = new CustomPanel();
-        protected BunifuDataGridView data = new BunifuDataGridView();
-        protected CustomTextBox dataName = new CustomTextBox();
-        protected CustomTextBox dataSurname = new CustomTextBox();
-        protected CustomTextBox dataTelno = new CustomTextBox();
-        protected CustomTextBox dataTarih = new CustomTextBox();
 
-        protected CustomButton saveButton = new CustomButton();
+        protected BunifuDataGridView data = new BunifuDataGridView();
+        protected PersonelEkle ekle = new PersonelEkle();
+
+        protected CustomButton ekleButton = new CustomButton();
         protected CustomButton nextButton = new CustomButton();
 
         public void setupComponents(SetupForm s)
@@ -51,64 +49,23 @@ namespace Personel_Vardiya_Programı_Team_.Layouts.SetupPanels
             data.GridColor = panel.BackColor;
             data.Theme = BunifuDataGridView.PresetThemes.Dark;
 
-            dataName.Size = new Size((panel.Size.Width / 5), (int)(panel.Size.Height * 0.1f));
-            dataName.Location = new Point(0, data.Location.X + data.Size.Height);
-            dataName.Name = "dataName";
-            dataName.BackColor = panel.BackColor;
-            dataName.ForeColor = Color.White;
-            dataName.BorderColor = Color.MediumSlateBlue;
-            dataName.BorderRadius = 0;
-            dataName.BorderSize = 2;
-            dataName.PlaceholderText = "Name";
-            dataName.Font = new Font("Comic Sans MS", dataName.Size.Height / 3.86f, FontStyle.Bold);
+            ekle.Visible = false;
+            ekle.kaydetClicked += Eklendi;
 
-            dataSurname.Size = dataName.Size;
-            dataSurname.Location = new Point(dataName.Location.X + dataName.Size.Width, dataName.Location.Y);
-            dataSurname.Name = "dataSurname";
-            dataSurname.BackColor = dataName.BackColor;
-            dataSurname.ForeColor = dataName.ForeColor;
-            dataSurname.BorderColor = dataName.BorderColor;
-            dataSurname.BorderRadius = dataName.BorderRadius;
-            dataSurname.BorderSize = dataName.BorderSize;
-            dataSurname.PlaceholderText = "Surname";
-            dataSurname.Font = dataName.Font;
+            ekleButton.Size = new Size((panel.Size.Width / 5), (int)(panel.Size.Height * 0.1f));
+            ekleButton.Location = new Point(panel.Size.Width - ekleButton.Size.Width, panel.Size.Height - ekleButton.Size.Height);
+            ekleButton.BackColor = panel.BackColor;
+            ekleButton.ForeColor = Color.White;
+            ekleButton.Name = "ekleButton";
+            ekleButton.TextColor = ekleButton.ForeColor;
+            ekleButton.BorderColor = Color.MediumSlateBlue;
+            ekleButton.BorderSize = 2;
+            ekleButton.BorderRadius = 0;
+            ekleButton.Text = "Add";
+            ekleButton.Click += EkleButton_Click;
 
-            dataTelno.Size = dataName.Size;
-            dataTelno.Location = new Point(dataSurname.Location.X + dataSurname.Size.Width, dataName.Location.Y);
-            dataTelno.Name = "dataTelno";
-            dataTelno.BackColor = dataName.BackColor;
-            dataTelno.ForeColor = dataName.ForeColor;
-            dataTelno.BorderColor = dataName.BorderColor;
-            dataTelno.BorderRadius = dataName.BorderRadius;
-            dataTelno.BorderSize = dataName.BorderSize;
-            dataTelno.PlaceholderText = "Phone";
-            dataTelno.Font = dataName.Font;
-
-            dataTarih.Size = dataName.Size;
-            dataTarih.Location = new Point(dataTelno.Location.X + dataTelno.Size.Width, dataName.Location.Y);
-            dataTarih.Name = "dataTarih";
-            dataTarih.BackColor = dataName.BackColor;
-            dataTarih.ForeColor = dataName.ForeColor;
-            dataTarih.BorderColor = dataName.BorderColor;
-            dataTarih.BorderRadius = dataName.BorderRadius;
-            dataTarih.BorderSize = dataName.BorderSize;
-            dataTarih.PlaceholderText = "Birthday";
-            dataTarih.Font = dataName.Font;
-
-            saveButton.Size = dataName.Size;
-            saveButton.Location = new Point(dataTarih.Location.X + dataTarih.Size.Width, dataName.Location.Y);
-            saveButton.BackColor = dataName.BackColor;
-            saveButton.ForeColor = dataName.ForeColor;
-            saveButton.TextColor = dataName.ForeColor;
-            saveButton.BorderColor = dataName.BorderColor;
-            saveButton.BorderSize = dataName.BorderSize;
-            saveButton.BorderRadius = dataName.BorderRadius;
-            saveButton.Name = "saveButton";
-            saveButton.Text = "Save";
-            saveButton.Click += SaveButton_Click;
-
-            nextButton.Size = saveButton.Size;
-            nextButton.Location = new Point((panel.Size.Width / 2) - (nextButton.Size.Width / 2), dataName.Location.Y + dataName.Size.Height + 5);
+            nextButton.Size = new Size((panel.Size.Width / 5), (int)(panel.Size.Height * 0.1f));
+            nextButton.Location = new Point((panel.Size.Width / 2) - (nextButton.Size.Width / 2), panel.Size.Height - nextButton.Size.Height);
             nextButton.BackColor = panel.BackColor;
             nextButton.ForeColor = Color.White;
             nextButton.TextColor = nextButton.ForeColor;
@@ -120,8 +77,21 @@ namespace Personel_Vardiya_Programı_Team_.Layouts.SetupPanels
             nextButton.Click += NextButton_Click;
 
             panel.Controls.Add(data);
-            panel.Controls.AddRange(new Control[] {dataName, dataSurname, dataTelno, dataTarih, saveButton, nextButton});
+            panel.Controls.Add(ekle);
+            panel.Controls.Add(ekleButton);
+            panel.Controls.Add(nextButton);
 
+        }
+
+        private void Eklendi(object sender, EventArgs e)
+        {
+            ListTable();
+            ekle.Visible = false;
+        }
+
+        private void EkleButton_Click(object sender, EventArgs e)
+        {
+            ekle.Visible = true;
         }
 
         private void NextButton_Click(object sender, EventArgs e)
@@ -135,18 +105,9 @@ namespace Personel_Vardiya_Programı_Team_.Layouts.SetupPanels
 
         protected void ListTable()
         {
-            data.DataSource = ConnectionMemory.conn.GetManager().GetData("select id, name as 'Ad', surname as 'Soyad', telno as 'Telefon', dtarih as 'Doğum Tarihi' from Personals");
+            data.DataSource = ConnectionMemory.conn.GetManager().GetData("select id, sicilno as 'Sicil No', kadro as 'Kadro', unvan as 'Unvan', name as 'Ad', surname as 'Soyad', tcno as 'TC', adres as 'Adres', telno as 'Telefon', eposta as 'Email' from Personals");
         }
 
-        private void SaveButton_Click(object sender, EventArgs e)
-        {
-            if(dataName.Texts.Equals("") && dataSurname.Texts.Equals("") && dataTelno.Texts.Equals("") && dataTarih.Texts.Equals(""))
-            {
-                return;
-            }
-            ConnectionMemory.conn.GetManager().SendData($"insert into Personals(name, surname, telno, dtarih) values ('{dataName.Texts.ToString()}', '{dataSurname.Texts.ToString()}', '{dataTelno.Texts.ToString()}', '{dataTarih.Texts.ToString()}')");
-            ListTable();
-        }
 
         public Panel GetPanel() => panel;
 
