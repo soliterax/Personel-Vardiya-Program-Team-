@@ -85,7 +85,7 @@ namespace Personel_Vardiya_Programı_Team_.Layouts.SetupPanels
                 try
                 {
                     ConnectionMemory.conn = new SoliteraxLibrary.SQLSystem.ConnectDatabase(s, SoliteraxConnection.ConnectionType.SQL).Connect();
-                } catch (SqlException e)
+                } catch (SqlException)
                 {
                     MessageBox.Show("İnternetiniz Veri tabanına bağlanmanızı engelliyor", "Veri Tabanı Bağlantı Hatası!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Application.Exit();

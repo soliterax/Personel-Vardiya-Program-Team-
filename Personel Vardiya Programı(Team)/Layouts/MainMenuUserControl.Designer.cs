@@ -45,7 +45,7 @@
             this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton1.ForeColor = System.Drawing.Color.White;
             this.customButton1.Location = new System.Drawing.Point(427, 85);
-            this.customButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.customButton1.Margin = new System.Windows.Forms.Padding(4);
             this.customButton1.Name = "customButton1";
             this.customButton1.Size = new System.Drawing.Size(511, 70);
             this.customButton1.TabIndex = 0;
@@ -123,7 +123,7 @@
             this.Controls.Add(this.customButton3);
             this.Controls.Add(this.customButton2);
             this.Controls.Add(this.customButton1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainMenuUserControl";
             this.Size = new System.Drawing.Size(1436, 704);
             this.ResumeLayout(false);

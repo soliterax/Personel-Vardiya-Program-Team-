@@ -31,7 +31,9 @@ namespace Personel_Vardiya_Programı_Team_.Layouts
         /// </summary>
         private void InitializeComponent()
         {
-            this.data = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.customButton1 = new SoliteraxControlLibrary.CustomButton();
             this.customButton2 = new SoliteraxControlLibrary.CustomButton();
             this.customButton3 = new SoliteraxControlLibrary.CustomButton();
@@ -39,20 +41,10 @@ namespace Personel_Vardiya_Programı_Team_.Layouts
             this.dataSurname = new SoliteraxControlLibrary.CustomTextBox();
             this.dataTelno = new SoliteraxControlLibrary.CustomTextBox();
             this.dataTarih = new SoliteraxControlLibrary.CustomTextBox();
+            this.data = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.dataid = new SoliteraxControlLibrary.CustomTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
             this.SuspendLayout();
-            // 
-            // data
-            // 
-            this.data.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data.Location = new System.Drawing.Point(47, 46);
-            this.data.Margin = new System.Windows.Forms.Padding(4);
-            this.data.Name = "data";
-            this.data.RowHeadersWidth = 51;
-            this.data.Size = new System.Drawing.Size(1321, 436);
-            this.data.TabIndex = 0;
-            this.data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // customButton1
             // 
@@ -196,7 +188,7 @@ namespace Personel_Vardiya_Programı_Team_.Layouts
             this.dataTarih.BorderRadius = 0;
             this.dataTarih.BorderSize = 2;
             this.dataTarih.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataTarih.ForeColor = System.Drawing.Color.White;
+            this.dataTarih.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dataTarih.LeftImage = null;
             this.dataTarih.Location = new System.Drawing.Point(1213, 537);
             this.dataTarih.Margin = new System.Windows.Forms.Padding(4);
@@ -212,11 +204,102 @@ namespace Personel_Vardiya_Programı_Team_.Layouts
             this.dataTarih.Texts = "";
             this.dataTarih.UnderlinedStyle = false;
             // 
+            // data
+            // 
+            this.data.AllowCustomTheming = false;
+            this.data.AllowUserToAddRows = false;
+            this.data.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.data.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.data.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.data.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.data.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.data.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.data.ColumnHeadersHeight = 40;
+            this.data.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
+            this.data.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.data.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.White;
+            this.data.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(117)))), ((int)(((byte)(119)))));
+            this.data.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.data.CurrentTheme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
+            this.data.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
+            this.data.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
+            this.data.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.data.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.data.CurrentTheme.Name = null;
+            this.data.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.data.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.data.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.White;
+            this.data.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(117)))), ((int)(((byte)(119)))));
+            this.data.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(117)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.data.DefaultCellStyle = dataGridViewCellStyle3;
+            this.data.EnableHeadersVisualStyles = false;
+            this.data.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
+            this.data.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
+            this.data.HeaderBgColor = System.Drawing.Color.Empty;
+            this.data.HeaderForeColor = System.Drawing.Color.White;
+            this.data.Location = new System.Drawing.Point(27, 24);
+            this.data.Name = "data";
+            this.data.ReadOnly = true;
+            this.data.RowHeadersVisible = false;
+            this.data.RowHeadersWidth = 51;
+            this.data.RowTemplate.Height = 40;
+            this.data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.data.Size = new System.Drawing.Size(1383, 458);
+            this.data.StandardTab = true;
+            this.data.TabIndex = 8;
+            this.data.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Dark;
+            this.data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_CellContentClick);
+            // 
+            // dataid
+            // 
+            this.dataid.BackColor = System.Drawing.SystemColors.Window;
+            this.dataid.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.dataid.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.dataid.BorderRadius = 0;
+            this.dataid.BorderSize = 2;
+            this.dataid.Enabled = false;
+            this.dataid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dataid.LeftImage = null;
+            this.dataid.Location = new System.Drawing.Point(220, 537);
+            this.dataid.Margin = new System.Windows.Forms.Padding(4);
+            this.dataid.Multiline = false;
+            this.dataid.Name = "dataid";
+            this.dataid.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.dataid.PasswordChar = false;
+            this.dataid.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.dataid.PlaceholderText = "ID";
+            this.dataid.RightImage = null;
+            this.dataid.Size = new System.Drawing.Size(155, 35);
+            this.dataid.TabIndex = 9;
+            this.dataid.Texts = "";
+            this.dataid.UnderlinedStyle = false;
+            // 
             // UsersUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.Controls.Add(this.dataid);
+            this.Controls.Add(this.data);
             this.Controls.Add(this.dataTarih);
             this.Controls.Add(this.dataTelno);
             this.Controls.Add(this.dataSurname);
@@ -224,18 +307,16 @@ namespace Personel_Vardiya_Programı_Team_.Layouts
             this.Controls.Add(this.customButton3);
             this.Controls.Add(this.customButton2);
             this.Controls.Add(this.customButton1);
-            this.Controls.Add(this.data);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UsersUserControl";
             this.Size = new System.Drawing.Size(1436, 704);
+            this.Load += new System.EventHandler(this.UsersUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.data)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView data;
         private SoliteraxControlLibrary.CustomButton customButton1;
         private SoliteraxControlLibrary.CustomButton customButton2;
         private SoliteraxControlLibrary.CustomButton customButton3;
@@ -243,5 +324,7 @@ namespace Personel_Vardiya_Programı_Team_.Layouts
         private SoliteraxControlLibrary.CustomTextBox dataSurname;
         private SoliteraxControlLibrary.CustomTextBox dataTelno;
         private SoliteraxControlLibrary.CustomTextBox dataTarih;
+        private Bunifu.UI.WinForms.BunifuDataGridView data;
+        private SoliteraxControlLibrary.CustomTextBox dataid;
     }
 }
